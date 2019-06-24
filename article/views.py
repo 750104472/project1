@@ -26,6 +26,9 @@ def login(request):
 
         if User.objects.filter(username=username, password=password):
             request.session['is_login'] = True
+            # 设置session持续时间
+            request.session.set_expiry(60*30)
+
             return HttpResponseRedirect('/index')
 
         elif not User.objects.filter(username=username):
