@@ -1,9 +1,16 @@
+<body>
 {% if request.session.is_login %}
     {{ notice }}
 
-<div><a href="#">当前在线：{{ request.session.username }}</a></div>
-<div><a href="/logout/">登出</a></div>
+<div >
+    <a  style="color:black" href="#">当前在线：【{{ request.session.nickname }}】</a>
+    <a  style="color:brown" href="/logout/">【登出】</a>
+</div>
+
+
+        <h1>欢迎来到脚本云平台!</h1>
 {% else %}
 
 <div><a href="/login/">登录</a></div>
 {% endif %}
+</body>
